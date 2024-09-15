@@ -43,7 +43,7 @@ function Cart() {
   return (
     <div className='container'>
       <TextHeading text={'Shopping cart'} />
-      <div className='flex justify-between max-md:flex-col'>
+      <div className='flex justify-between items-center max-md:flex-col'>
         <div className='w-fit'>
           {cart.getCart().map((item: BookCardProps) => {
             return <BookItem book={item} key={item.id} />

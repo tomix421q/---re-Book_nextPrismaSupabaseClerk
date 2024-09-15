@@ -13,7 +13,7 @@ function EmptyList({
   return (
     <div className='mt-8'>
       <h2 className='font-bold text-5xl tracking-wider font-qwitcher'>{heading}</h2>
-      <p className='text-lg'>{message}</p>
+      <p className='text-lg mt-4'>{message}</p>
       <Button asChild className='mt-8 capitaliz' size={'lg'} variant={'destructive'}>
         <Link href={'/books'}>{btnText}</Link>
       </Button>
