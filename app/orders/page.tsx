@@ -35,7 +35,7 @@ async function Orders() {
           return (
             <div key={order.id} className='border p-4 gap-4 md:px-10 rounded-md lg:grid grid-cols-[500px_1px_auto]'>
               {/* INFO start */}
-              <div className=''>
+              <div className='space-y-1'>
                 <h4>
                   <span className='text-sm'>
                     Order ID : <span className='text-muted-foreground text-sm'>{id}</span>
@@ -72,6 +72,7 @@ async function Orders() {
                 <h5 className='text-center uppercase text-muted-foreground text-sm mt-1'>Buyed items : </h5>
                 <div className='flex gap-4 text-center overflow-auto mt-4 '>
                   {buyItems.map((item: BookCardProps) => {
+                    const name = item.name
                     return (
                       <Link key={item.id} href={`/books/${item.id}`} className=''>
                         <Image
@@ -80,9 +81,9 @@ async function Orders() {
                           priority
                           width={50}
                           height={10}
-                          className='max-h-[70px] mx-auto'
+                          className='h-[80px] mx-auto w-auto'
                         />
-                        <p className='text-muted-foreground text-[.625rem]'>{item.name}</p>
+                        <p className='text-muted-foreground text-[.625rem] mt-1'> {name.substring(0, 25)}...</p>
                       </Link>
                     )
                   })}

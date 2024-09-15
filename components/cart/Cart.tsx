@@ -1,11 +1,8 @@
 'use client'
 import { useCart } from '@/utils/context/cart'
-import useIsLoading from '@/utils/hooks/useIsLoading'
-import { useRouter } from 'next/navigation'
+import setLoading from '@/utils/hooks/useIsLoading'
 import { useEffect } from 'react'
-import { toast } from '../ui/use-toast'
 import TextHeading from '../book-info/TextHeading'
-import BookCard from '../card/BookCard'
 import { BookCardProps } from '@/utils/types'
 import BookItem from './BookItem'
 import { Button } from '../ui/button'
@@ -20,10 +17,10 @@ function Cart() {
   const cart = useCart()
 
   useEffect(() => {
-    // useIsLoading(true)
+    setLoading(true)
     cart.getCart()
     cart.cartTotal()
-    // useIsLoading(false)
+    setLoading(false)
   }, [cart])
 
   // const goToCheckout = () => {
