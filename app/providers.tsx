@@ -8,7 +8,7 @@ function Providers({ children }: { children: React.ReactNode }) {
     <>
       <Toaster />
       <CartProvider>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </CartProvider>
