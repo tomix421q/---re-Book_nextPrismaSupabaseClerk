@@ -25,15 +25,15 @@ function CheckoutPage() {
     id: item.id,
     name: item.name,
     price: item.price,
-    image: item.image
+    image: item.image,
   }))
   const formItems = JSON.stringify(items)
 
   useEffect(() => {
-    useIsLoading(true)
+    // useIsLoading(true)
     cart.getCart()
     cart.cartTotal()
-    useIsLoading(false)
+    // useIsLoading(false)
   }, [cart])
 
   if (!userId || !email)

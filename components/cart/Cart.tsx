@@ -20,10 +20,10 @@ function Cart() {
   const cart = useCart()
 
   useEffect(() => {
-    useIsLoading(true)
+    // useIsLoading(true)
     cart.getCart()
     cart.cartTotal()
-    useIsLoading(false)
+    // useIsLoading(false)
   }, [cart])
 
   // const goToCheckout = () => {

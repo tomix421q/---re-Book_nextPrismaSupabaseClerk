@@ -6,7 +6,8 @@ import { loadStripe } from '@stripe/stripe-js'
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string)
-console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+// console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+
 function PaymentCheckout() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')

@@ -29,9 +29,9 @@ async function HomePage() {
               to <br className='hidden lg:block' /> Re-Book!
             </h2>
             <p className='italic tracking-wider leading-6 lg:leading-10 text-md md:text-xl lg:text-2xl max-w-lg'>
-              "Discover a world of stories waiting for you. Whether you’re looking to sell cherished reads or find your next great
-              book, re-Book is your marketplace for preloved literature. Explore, connect, and share your passion for books with a
-              community that values every page."
+              &quot; Discover a world of stories waiting for you. Whether you’re looking to sell cherished reads or find your next
+              great book, re-Book is your marketplace for preloved literature. Explore, connect, and share your passion for books
+              with a community that values every page. &quot;
             </p>
           </div>
 
