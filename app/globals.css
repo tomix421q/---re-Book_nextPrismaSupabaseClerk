@@ -2,32 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 210 33% 95%; /* Svetlá modrá */
+    --foreground: 220 15% 20%; /* Tmavomodrý text */
+    --card: 0 0% 100%; /* Biela */
+    --card-foreground: 220 10% 15%; /* Tmavá sivá */
+    --popover: 210 30% 98%; /* Bledomodrý */
+    --popover-foreground: 220 15% 20%;
+    --primary: 35 80% 45%; /* Svetlooranžová */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 45% 85%; /* Svetlá tyrkysová */
+    --secondary-foreground: 220 15% 20%;
+    --muted: 210 15% 85%; /* Svetlosivá */
+    --muted-foreground: 220 10% 35%;
+    --accent: 345 85% 65%; /* Jemná ružová */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 75% 55%; /* Svetlá červená */
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 80%; /* Svetlomodrý border */
+    --input: 210 20% 80%;
+    --ring: 220 15% 20%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 15% 10%; /* Tmavomodrá */
+    --foreground: 210 25% 95%; /* Svetlomodrý text */
+    --card: 220 20% 15%; /* Tmavosivá karta */
+    --card-foreground: 210 25% 95%;
+    --popover: 220 20% 15%;
+    --popover-foreground: 210 25% 95%;
+    --primary: 35 85% 65%; /* Svetlooranžová */
+    --primary-foreground: 220 15% 10%;
+    --secondary: 160 35% 25%; /* Tmavá tyrkysová */
+    --secondary-foreground: 210 25% 95%;
+    --muted: 220 15% 15%; /* Tmavosivá */
+    --muted-foreground: 220 10% 75%;
+    --accent: 345 75% 55%; /* Jemná tmavšia ružová */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 40%; /* Tmavá červená */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 20%; /* Tmavomodrý border */
+    --input: 220 20% 20%;
+    --ring: 210 25% 95%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .container {
+    @apply mx-auto max-w-6xl xl:max-w-7xl px-4;
   }
 }
