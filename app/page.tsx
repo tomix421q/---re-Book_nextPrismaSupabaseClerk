@@ -55,23 +55,23 @@ async function HomePage() {
       {/* LATEST ITEMS */}
       <section className='mt-32 mb-48'>
         <TextHeading text={'Newest books'} />
-        <ScrollArea className='w-full whitespace-nowrap rounded-md border ring-1'>
-          <div className='flex w-max space-x-10 p-8'>
+        <ScrollArea className='w-full whitespace-nowrap rounded-md border ring-1 h-fit'>
+          <div className='flex w-max space-x-10 p-4 md:p-8 items-center'>
             {fetchNewestBooks.map((book: NewItem) => {
               return (
-                <figure key={book.id} className='hover:scale-110 transition-all ease-out'>
+                <figure key={book.id} className='hover:scale-110 transition-all ease-out w-[80px] md:w-[250px] h-min'>
                   <Link href={`/books/${book.id}`}>
                     <div className='overflow-hidden rounded-md'>
                       <Image
                         src={book.image}
                         alt={book.name}
-                        className='aspect-[3/4] h-fit object-cover w-[300px] mx-auto'
+                        className='aspect-[3/4] h-fit object-cover w-[5rem] md:w-[300px] mx-auto'
                         width={300}
                         height={400}
                       />
                     </div>
-                    <figcaption className='pt-2 text-sm capitalize tracking-wider text-center flex flex-col border-t-2 '>
-                      <span className='font-semibold text-foreground'>{book.name}</span>
+                    <figcaption className='pt-2 text-sm capitalize tracking-wider text-center flex flex-col border-t-2'>
+                      <span className='font-semibold text-foreground text text-xs md:text-lg whitespace-normal'>{book.name}</span>
                       <span className='font-semibold text-muted-foreground text-xs'>
                         {new Date(book.createdAt).toLocaleDateString()}
                       </span>

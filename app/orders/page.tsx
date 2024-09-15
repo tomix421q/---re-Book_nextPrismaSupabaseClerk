@@ -74,7 +74,7 @@ async function Orders() {
                   {buyItems.map((item: BookCardProps) => {
                     const name = item.name
                     return (
-                      <Link key={item.id} href={`/books/${item.id}`} className=''>
+                      <Link key={item.id} href={`/books/${item.id}`}>
                         <Image
                           src={item.image}
                           alt={item.name}

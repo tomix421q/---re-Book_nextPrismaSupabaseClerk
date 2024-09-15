@@ -18,9 +18,9 @@ import { redirect } from 'next/navigation'
 
 import BuyButton from '@/components/book-info/BuyButton'
 
-const DynamicDescription = dynamic(() => import('@/components/book-info/Description'), {
-  ssr: false,
-})
+// const DynamicDescription = dynamic(() => import('@/components/book-info/Description'), {
+//   ssr: false,
+// })
 
 async function BookDetailsPage({ params }: { params: { id: string } }) {
   const book = await fetchBookDetails(params.id)
@@ -34,15 +34,15 @@ async function BookDetailsPage({ params }: { params: { id: string } }) {
   if (!book) redirect('/')
 
   return (
-    <section className='container'>
+    <section className='container '>
       <BreadCrumbs name={book.name} />
-      <header className='flex justify-between items-center mt-4'>
-        <div className='flex-1'>
-          <h1 className='text-3xl md:text-6xl font-qwitcher mb-4'>{book.name}</h1>
-          <p className='text-muted-foreground mb-2 text-sm italic'>{book.tagline}</p>
+      <header className='flex flex-col md:flex-row justify-between items-center mt-4 '>
+        <div className='flex flex-col whitespace-normal'>
+          <h1 className='text-3xl md:text-6xl font-qwitcher mb-4 break-words whitespace-normal'>{book.name}</h1>
+          <p className='text-muted-foreground mb-2 text-sm italic whitespace-normal break-all'>{book.tagline}</p>
         </div>
 
-        <div className='flex items-center gap-x-4'>
+        <div className='flex items-center gap-x-4 my-2'>
           {/* share favorite buttons*/}
           <ShareButton name={book.name} bookId={book.id} />
           <FavoriteToggleButton bookId={book.id} />
